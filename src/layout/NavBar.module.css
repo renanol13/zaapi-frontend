@@ -1,0 +1,23 @@
+.boxNavBar ul{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 50px;
+    position: fixed;
+    background-color: var(--colorThema);
+}
+
+.boxNavBar li svg{
+    font-size: 1.8em;
+    color: var(--color2);
+    font-weight: bold;
+}
+
+.boxNavBar li{
+    cursor: pointer;
+}
+
+.boxNavBar li span{
+    display: none;
+}

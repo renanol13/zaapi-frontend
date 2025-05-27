@@ -1,0 +1,28 @@
+:root {
+  --colorThema: white;
+  --color1: #0866ff;
+  --color2: #606366;
+  --color3: #c2d9ff;
+  --color4: #f3f6fb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter";
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #ffff;
+}
+li {
+  list-style: none;
+}
+
+a {
+  font-style: none;
+}
