@@ -1,8 +1,8 @@
-import ProtectedLayout from "./layout/ProtectedLayout";
+import  AppRoutes  from "./routes/AppRoutes.jsx";
 
 const App = () => {
   return (
-    <ProtectedLayout/>
+    <AppRoutes/>
   );
 };
 
