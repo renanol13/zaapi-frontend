@@ -1,0 +1,18 @@
+.button{
+    width: 100%;
+    font-weight: bold;
+    border-radius: 7px;
+    height: 35px;
+    background-color: var(--color1);
+    color: var(--colorThema);
+    border: 1px solid var(--color2);
+    border-radius: 7px;
+}
+
+
+@media (min-width: 728px){
+    button:hover{
+        opacity: .6;
+    }
+
+}

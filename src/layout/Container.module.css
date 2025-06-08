@@ -1,9 +1,6 @@
 .boxConteiner{
-    padding-top: 800px;
+    /* padding-top: 800px; */
     margin: 0 auto;
     max-width: 800px;
 }
 
-p{
-    line-height: 20em;
-}

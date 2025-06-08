@@ -4,6 +4,7 @@
   --color2: #606366;
   --color3: #c2d9ff;
   --color4: #f3f6fb;
+  --fontdestaque: 'Fredoka'
 }
 
 * {
@@ -17,12 +18,12 @@ html,
 body {
   height: 100%;
   width: 100%;
-  background-color: #ffff;
+  background-color: #fff;
 }
 li {
   list-style: none;
 }
 
 a {
-  font-style: none;
+  text-decoration: none;
 }
