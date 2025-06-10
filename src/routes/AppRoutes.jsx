@@ -4,6 +4,7 @@ import AuthRoute from "./AuthRoute";
 import Signin from "../pages/Signin";
 import IsAuthenticatedRoute from "./IsAuthenticatedRoute";
 import ProtectedLayout from "../layout/ProtectedLayout";
+import FormRegister from "../pages/Register/FormRegister";
 
 const AppRoutes = () => {
   const routesItems = [
@@ -22,6 +23,15 @@ const AppRoutes = () => {
           element={
             <IsAuthenticatedRoute>
               <Signin />
+            </IsAuthenticatedRoute>
+          }
+        />
+
+        <Route
+          path="/register"
+          element={
+            <IsAuthenticatedRoute>
+              <FormRegister />
             </IsAuthenticatedRoute>
           }
         />

@@ -8,6 +8,7 @@ import { FaEyeSlash } from "react-icons/fa";
 import { FaRegEye } from "react-icons/fa";
 import icon2 from "../icons/logotipo2.png";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Signin = () => {
   const handleChange = () => {};
@@ -45,7 +46,7 @@ const Signin = () => {
           <ButtonForm text="Entrar" />
         </form>
         <p>
-          Ainda não tem conta? <a href="">Registre-se</a>
+          Ainda não tem conta? <Link to='/register'>Registre-se</Link>
         </p>
       </div>
     </div>

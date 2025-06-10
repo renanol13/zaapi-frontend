@@ -1,0 +1,42 @@
+.boxFormRegister{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+
+.boxMain  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.boxMain h3{
+    width: 300px;
+    text-align: center;
+    color: var(--color2);
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+.boxMain h3 strong{
+    color: var(--color1);
+    font-size: 1.5em;
+    text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.218);
+}
+
+.boxForm{
+    width: 350px;
+    margin-bottom: 50px;
+
+}
+
+.boxActions{
+    width: 90%;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+

@@ -1,4 +1,4 @@
-label{
+.boxInput label{
     display: none;
 }
 
@@ -16,9 +16,14 @@ label{
     border-radius: 7px;
     text-indent: 5px;
     font-size: .9rem;
+    margin-bottom: 15px;
 }
 
 .boxInput input.signin{
     border: none;
     height: 100%;
+}
+
+.boxInput input:invalid{
+    color: var(--color2);
 }

@@ -10,14 +10,16 @@ const Input = ({
 }) => {
   return (
     <div className={styles.boxInput}>
-      <label>{name}</label>
+      <label htmlFor={name}>{name}</label>
       <input
         type={type}
         name={name}
+        id={name}
         value={value}
         placeholder={placeholder}
         onChange={handleChange}
         className={styles[customClass]}
+        required
       />
     </div>
   );
