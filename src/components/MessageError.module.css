@@ -1,0 +1,14 @@
+
+
+.boxMessageError {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  height: 16px;
+  opacity: 0;
+  transition: .2s ;
+}
+
+.boxMessageError.show{
+    opacity: 1
+}

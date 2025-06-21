@@ -1,10 +1,11 @@
-import styles from './ButtonForm.module.css'
+import styles from "./ButtonForm.module.css";
 
-const ButtonForm  = ({handleClick, text}) => {
-return (
-    <button onClick={()=> handleClick()} className={styles.button}>
-        {text}
+const ButtonForm = ({ handleClick = null, text }) => {
+  return (
+    <button  onClick={() => handleClick?.()} className={styles.button}>
+      {text}
     </button>
-)}
+  );
+};
 
 export default ButtonForm;

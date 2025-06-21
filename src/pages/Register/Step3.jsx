@@ -16,7 +16,7 @@ const Step3 = ({ handleChange, dataForm }) => {
           value={dataForm.city || ""}
           name="city"
           handleChange={handleChange}
-          placeholder="Digite uma senha..."
+          placeholder="Crie uma senha..."
           customClass="signin"
         />
         <button type="button" onClick={() => setShowPassword(!showPassword)}>

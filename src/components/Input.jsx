@@ -19,7 +19,6 @@ const Input = ({
         placeholder={placeholder}
         onChange={handleChange}
         className={styles[customClass]}
-        required
       />
     </div>
   );

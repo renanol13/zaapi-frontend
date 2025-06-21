@@ -1,0 +1,11 @@
+.boxSplashScreen{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxSplashScreen img{
+    width: 130px;
+    /* opacity: .2; */
+}

@@ -15,7 +15,7 @@ const Step2 = ({ handleChange, dataForm }) => {
       />
 
       <Input
-        type="date"
+        type="text"
         value={dataForm.age || ""}
         name="age"
         handleChange={handleChange}
