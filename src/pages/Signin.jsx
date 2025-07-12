@@ -15,6 +15,8 @@ import UseAuth from "../hooks/UseAuth";
 const Signin = () => {
   const [data, setData] = useState({});
   const [messageError, setMessageError] = useState("");
+  const [showPassword, setShowPassword] = useState(true);
+
   const navigate = useNavigate();
   const { login } = UseAuth();
 
@@ -26,17 +28,16 @@ const Signin = () => {
   const handleLogin = async () => {
     const { isLogged, message } = await login(data);
     isLogged ? navigate("/") : setMessageError(message);
+    
   };
 
   const handleSubmit = async (e) => {
-    console.log("oi");
     e.preventDefault();
     if (!data.email || !data.password) {
       return setMessageError("Preencha todos os campos!");
     }
     handleLogin();
   };
-  const [showPassword, setShowPassword] = useState(false);
   return (
     <div className={styles.boxSignin}>
       <div className={styles.boxStyles}>

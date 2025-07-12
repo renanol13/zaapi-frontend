@@ -6,6 +6,7 @@
     height: 50px;
     position: fixed;
     background-color: var(--colorThema);
+    margin-bottom: 15px;
 }
 
 .boxNavBar li svg{

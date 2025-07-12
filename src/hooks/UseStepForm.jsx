@@ -4,7 +4,6 @@ const UseStepForm = (steps) => {
   const [currentStep, setCurrentStep] = useState(0);
 
     const changeStep = (i) => {
-      console.log(i);
       
       if (i < 0 || i >= steps.length) return;
       

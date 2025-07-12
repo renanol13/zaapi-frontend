@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import SplashScreen from "../components/SplashScreen";
 import api from "../api/Api";
 
@@ -9,15 +9,29 @@ export const AuthProvider = ({ children }) => {
   const [dataUser, setDataUser] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
+  useEffect(() => {
+    const storageUser = localStorage.getItem("@authDataUser");
+    const storageToken = localStorage.getItem("@authToken");
+
+    if (storageToken && storageUser) {
+      setDataUser(JSON.parse(storageUser));
+      setToken(storageUser);
+    }
+
+    setIsLoading(false);
+  }, []);
+
   const login = async (data) => {
     try {
       const res = await api.post("/auth/login", data);
-      const { token, user } = res;
-      if (token && user) {
+      const { token, userData } = res.data;
+      console.log(token);
+      
+      if (token && userData ) {
         setToken(token);
-        setDataUser(user);
-        // localStorage.setItem("@authDataUser", JSON.stringify(user));
-        // localStorage.setItem("@authToken", token);
+        setDataUser(userData);
+        localStorage.setItem("@authDataUser", JSON.stringify(userData));
+        localStorage.setItem("@authToken", token);
       }
 
       return { isLogged: true };
@@ -29,11 +43,13 @@ export const AuthProvider = ({ children }) => {
   const logout = () => {
     setToken(null);
     setDataUser(null);
+    localStorage.removeItem("@authDataUser");
+    localStorage.removeItem("@authToken");
   };
 
   return (
     <AuthContext.Provider value={{ token, dataUser, logout, login }}>
-      {isLoading ? children : <SplashScreen />}
+      {!isLoading ? children : <SplashScreen />}
     </AuthContext.Provider>
   );
 };

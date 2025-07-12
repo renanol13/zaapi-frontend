@@ -9,7 +9,7 @@ import FormRegister from "../pages/Register/FormRegister";
 const AppRoutes = () => {
   const routesItems = [
     {
-      path: "",
+      path: "/",
       element: <Home />,
       index: true,
     },
@@ -22,7 +22,7 @@ const AppRoutes = () => {
           path="/signin"
           element={
             <IsAuthenticatedRoute>
-              <Signin />
+              <Signin/>
             </IsAuthenticatedRoute>
           }
         />

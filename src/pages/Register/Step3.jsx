@@ -5,16 +5,17 @@ import Input from "../../components/Input";
 import { FaEyeSlash } from "react-icons/fa";
 import { FaRegEye } from "react-icons/fa";
 
-const Step3 = ({ handleChange, dataForm }) => {
+const Step3 = ({ handleChange, dataForm, setMessageError }) => {
   const [showPassword, setShowPassword] = useState(false);
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   return (
     <div>
       <div className={styles.boxInput}>
         <Input
           type={showPassword ? "password" : "text"}
-          value={dataForm.city || ""}
-          name="city"
+          value={dataForm.password || ""}
+          name="password"
           handleChange={handleChange}
           placeholder="Crie uma senha..."
           customClass="signin"
@@ -26,9 +27,9 @@ const Step3 = ({ handleChange, dataForm }) => {
 
       <Input
         type={showPassword ? "password" : "text"}
-        value={dataForm.age || ""}
-        name="age"
-        handleChange={handleChange}
+        value={confirmPassword || ""}
+        name="confirmPassword"
+        handleChange={(e) => setConfirmPassword(e.target.value)}
         placeholder="Confirme sua senha..."
       />
     </div>
