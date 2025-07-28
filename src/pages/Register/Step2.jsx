@@ -2,33 +2,33 @@ import Input from "../../components/Input";
 import Select from "../../components/Select";
 import TextArea from "../../components/TextArea";
 
-const Step2 = ({ handleChange, dataForm }) => {
+const Step2 = ({ handleChange, stepDataForm }) => {
 
   return (
     <div>
       <Input
         type="text"
-        value={dataForm.city || ""}
+        value={stepDataForm.city || ""}
         name="city"
         handleChange={handleChange}
         placeholder="Informe sua cidade..."
       />
 
       <Input
-        type="text"
-        value={dataForm.age || ""}
+        type="number"
+        value={stepDataForm.age || ""}
         name="age"
         handleChange={handleChange}
         placeholder="Informe sua idade..."
       />
       <Select
-        value={dataForm.sex || ""}
+        value={stepDataForm.sex || ""}
         name="sex"
         handleChange={handleChange}
       />
 
       <TextArea
-        value={dataForm.biography || ""}
+        value={stepDataForm.biography || ""}
         name="biography"
         handleChange={handleChange}
         placeholder="Quer se apresentar? Pode começar por aqui ..."

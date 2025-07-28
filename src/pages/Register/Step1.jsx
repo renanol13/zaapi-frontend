@@ -1,11 +1,13 @@
 import Input from "../../components/Input";
 
-const Step1 = ({ handleChange, dataForm }) => {
+const Step1 = ({ handleChange, stepDataForm, currentStep }) => {
+  
+
   return (
     <div>
       <Input
         type="text"
-        value={dataForm.email || ''}
+        value={stepDataForm.email || ''}
         name="email"
         handleChange={handleChange}
         placeholder="Informe seu email..."
@@ -13,7 +15,7 @@ const Step1 = ({ handleChange, dataForm }) => {
 
       <Input
         type="text"
-        value={dataForm.name || ''}
+        value={stepDataForm.name || ''}
         name="name"
         handleChange={handleChange}
         placeholder="Informe seu nome..."
@@ -21,7 +23,7 @@ const Step1 = ({ handleChange, dataForm }) => {
       
      <Input
         type="text"
-        value={dataForm.userName || ''}
+        value={stepDataForm.userName || ''}
         name="userName"
         handleChange={handleChange}
         placeholder="Nome de usuário..."
