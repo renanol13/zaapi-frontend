@@ -4,3 +4,8 @@
     max-width: 800px;
 }
 
+@media (min-width: 800px){
+    .boxConteiner{
+        margin-left: 120px;
+    }
+}

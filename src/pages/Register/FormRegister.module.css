@@ -41,3 +41,21 @@
     margin-top: 10px;
 }
 
+.boxInfoCurrentStep{
+    display: flex;
+    gap: 3px;
+}
+
+.boxInfoCurrentStep > div{
+    background-color: var(--color2);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    transition: .4s;
+}
+
+.boxInfoCurrentStep > .activeCurrentStep{
+    width: 20px;
+    border-radius: 50px;
+
+}

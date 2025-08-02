@@ -21,11 +21,10 @@ export const AuthProvider = ({ children }) => {
     setIsLoading(false);
   }, []);
 
-  const login = async (data) => {
+  const setDataStorage = async (endpoint, data) => {
     try {
-      const res = await api.post("/auth/login", data);
+      const res = await api.post(endpoint, data);
       const { token, userData } = res.data;
-      console.log(token);
       
       if (token && userData ) {
         setToken(token);
@@ -36,6 +35,7 @@ export const AuthProvider = ({ children }) => {
 
       return { isLogged: true };
     } catch (error) {
+      
       return { isLogged: false, message: error.message };
     }
   };
@@ -48,7 +48,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ token, dataUser, logout, login }}>
+    <AuthContext.Provider value={{ token, dataUser, logout, setDataStorage }}>
       {!isLoading ? children : <SplashScreen />}
     </AuthContext.Provider>
   );

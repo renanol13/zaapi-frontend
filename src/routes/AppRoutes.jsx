@@ -5,6 +5,7 @@ import Signin from "../pages/Signin";
 import IsAuthenticatedRoute from "./IsAuthenticatedRoute";
 import ProtectedLayout from "../layout/ProtectedLayout";
 import FormRegister from "../pages/Register/FormRegister";
+import Profile from "../pages/Profile";
 
 const AppRoutes = () => {
   const routesItems = [
@@ -12,6 +13,10 @@ const AppRoutes = () => {
       path: "/",
       element: <Home />,
       index: true,
+    },
+    {
+      path: "/profile",
+      element: <Profile />,
     },
   ];
 
@@ -22,7 +27,7 @@ const AppRoutes = () => {
           path="/signin"
           element={
             <IsAuthenticatedRoute>
-              <Signin/>
+              <Signin />
             </IsAuthenticatedRoute>
           }
         />
@@ -47,7 +52,14 @@ const AppRoutes = () => {
           ))}
         </Route>
 
-        <Route path="*" element={<strong>Page not Found</strong>} />
+        <Route
+          path="*"
+          element={
+            <ProtectedLayout>
+              <strong>Page not Found</strong>
+            </ProtectedLayout>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );

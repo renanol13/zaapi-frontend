@@ -18,7 +18,7 @@ const Signin = () => {
   const [showPassword, setShowPassword] = useState(true);
 
   const navigate = useNavigate();
-  const { login } = UseAuth();
+  const { setDataStorage } = UseAuth();
 
   const handleChange = (e) => {
     if(messageError) setMessageError('')
@@ -26,9 +26,8 @@ const Signin = () => {
   };
 
   const handleLogin = async () => {
-    const { isLogged, message } = await login(data);
+    const { isLogged, message } = await setDataStorage('/auth/login', data);
     isLogged ? navigate("/") : setMessageError(message);
-    
   };
 
   const handleSubmit = async (e) => {

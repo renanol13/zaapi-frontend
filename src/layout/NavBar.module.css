@@ -6,13 +6,13 @@
     height: 50px;
     position: fixed;
     background-color: var(--colorThema);
-    margin-bottom: 15px;
+    bottom: 0px;
 }
 
-.boxNavBar li svg{
-    font-size: 1.8em;
+.boxNavBar li a svg{
+    font-size: 1.8rem;
     color: var(--color2);
-    font-weight: bold;
+    transition: .4s;
 }
 
 .boxNavBar li{
@@ -21,4 +21,50 @@
 
 .boxNavBar li span{
     display: none;
+}
+
+.boxNavBar li a.activeIcon svg{
+    color: var(--color1) !important;
+}
+
+
+
+@media (min-width: 600px) {
+    .boxNavBar ul{
+        bottom: initial;
+    }  
+}
+
+@media (min-width: 800px) {
+    .boxNavBar ul{
+        flex-direction: column;
+        height: 100dvh;
+        width: 90px;
+        position: absolute;
+        justify-content: center;
+        gap: 40px;
+        
+    }
+
+    .boxNavBar li a svg{
+        padding: 10px;
+        border-radius: 10px;
+        box-sizing: content-box;
+        transition: .4s;
+        font-size: 2.1rem;
+        
+    }
+
+    .boxNavBar li a svg:hover{
+        background-color: rgba(128, 128, 128, 0.379);
+
+    }
+    .boxNavBar li a svg:active{
+        transform: scale(.8);
+    }
+    
+
+    /* .boxNavBar li a svg:not(:hover){
+        opacity: .2;
+    } */
 }
