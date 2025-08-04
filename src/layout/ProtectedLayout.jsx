@@ -1,10 +1,11 @@
 import Container from "./Container";
+import Header from "./Header";
 import NavBar from "./NavBar";
 
 const ProtectedLayout = ({ children }) => {
   return (
     <>
-      <NavBar />
+      <Header />
       <Container>{children}</Container>
     </>
   );

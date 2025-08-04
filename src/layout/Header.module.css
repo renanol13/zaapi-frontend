@@ -1,0 +1,51 @@
+.boxHeader header {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  gap: 10px;
+  z-index: 1;
+}
+
+.boxLogo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.boxLogo img {
+  width: 40px;
+  height: 40px;
+}
+
+.boxLogo h2 {
+  color: var(--color1);
+}
+
+.boxHeader header > h2 {
+  color: var(--color1);
+  font-size: 1.2rem;
+  display: none;
+}
+
+@media (min-width: 700px) {
+  .boxLogo img {
+    margin-left: 30px;
+  }
+
+  .boxHeader header {
+    justify-content: initial;
+  }
+
+  .boxLogo h2 {
+    display: none;
+  }
+
+  .boxHeader header > h2 {
+    display: block;
+    margin: 0 auto;
+  }
+}

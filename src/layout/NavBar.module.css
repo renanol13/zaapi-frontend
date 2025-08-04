@@ -13,6 +13,7 @@
     font-size: 1.8rem;
     color: var(--color2);
     transition: .4s;
+    font-size: 1.8rem;
 }
 
 .boxNavBar li{
@@ -29,21 +30,17 @@
 
 
 
-@media (min-width: 600px) {
+
+
+@media (min-width: 700px) {
     .boxNavBar ul{
         bottom: initial;
-    }  
-}
-
-@media (min-width: 800px) {
-    .boxNavBar ul{
         flex-direction: column;
         height: 100dvh;
         width: 90px;
         position: absolute;
         justify-content: center;
-        gap: 40px;
-        
+        gap: 30px;
     }
 
     .boxNavBar li a svg{
@@ -52,10 +49,10 @@
         box-sizing: content-box;
         transition: .4s;
         font-size: 2.1rem;
-        
     }
-
+    
     .boxNavBar li a svg:hover{
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.488);
         background-color: rgba(128, 128, 128, 0.379);
 
     }

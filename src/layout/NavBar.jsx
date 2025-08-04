@@ -5,18 +5,19 @@ import { Link, useLocation } from "react-router-dom";
 import { GoHomeFill } from "react-icons/go";
 import { FiSearch } from "react-icons/fi";
 import { FaUserFriends } from "react-icons/fa";
-import { CgProfile } from "react-icons/cg";
-import { useState } from "react";
 
-const NavBar = () => {
-  const [iconActive, setIconActive] = useState(false);
+import { IoPerson } from "react-icons/io5";
+
+const NavBar = ({ setNameAddress }) => {
 
   const { pathname } = useLocation();
+
+
 
   const elementsNav = [
     {
       link: "/",
-      label: "Home",
+      label: "Página inicial",
       icon: <GoHomeFill />,
     },
 
@@ -27,22 +28,24 @@ const NavBar = () => {
     },
     {
       link: "/friends",
-      label: "amigos",
+      label: "Amigos",
       icon: <FaUserFriends />,
     },
     {
       link: "/profile",
       label: "Perfil",
-      icon: <CgProfile />,
+      icon: <IoPerson />,
     },
   ];
 
   return (
     <nav className={styles.boxNavBar}>
+    
       <ul>
         {elementsNav.map(({ link, label, icon }, i) => (
           <li key={i}>
             <Link
+              onClick={()=>setNameAddress(label)}
               to={link}
               className={`${link === pathname ? styles.activeIcon : ''}`}
             >
