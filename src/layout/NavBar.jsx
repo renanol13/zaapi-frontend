@@ -44,6 +44,7 @@ const NavBar = ({ setNameAddress }) => {
       <ul>
         {elementsNav.map(({ link, label, icon }, i) => (
           <li key={i}>
+            
             <Link
               onClick={()=>setNameAddress(label)}
               to={link}

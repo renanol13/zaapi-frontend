@@ -1,8 +1,10 @@
 import styles from "./Container.module.css";
 
-const Container = ({ children }) => {
+const Container = ({ children, customClass }) => {
   return (
-    <div className={styles.boxConteiner}>
+    <div     className={`${
+        customClass ? styles[customClass] : styles["boxConteiner"]
+      }`}>
      {children}
     </div>
   );

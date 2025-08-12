@@ -9,15 +9,19 @@
     bottom: 0px;
 }
 
+
 .boxNavBar li a svg{
     font-size: 1.8rem;
     color: var(--color2);
     transition: .4s;
     font-size: 1.8rem;
+
 }
 
 .boxNavBar li{
     cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+
 }
 
 .boxNavBar li span{
@@ -27,6 +31,12 @@
 .boxNavBar li a.activeIcon svg{
     color: var(--color1) !important;
 }
+
+
+ .boxNavBar li a svg:active{
+        transform: scale(.8);
+ }
+
 
 
 
@@ -56,12 +66,6 @@
         background-color: rgba(128, 128, 128, 0.379);
 
     }
-    .boxNavBar li a svg:active{
-        transform: scale(.8);
-    }
+  
     
-
-    /* .boxNavBar li a svg:not(:hover){
-        opacity: .2;
-    } */
 }

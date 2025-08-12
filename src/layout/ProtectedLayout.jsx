@@ -7,6 +7,7 @@ const ProtectedLayout = ({ children }) => {
     <>
       <Header />
       <Container>{children}</Container>
+      
     </>
   );
 };
