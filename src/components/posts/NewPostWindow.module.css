@@ -1,6 +1,81 @@
-.boxNewPost{
-   width: 100%;
-   display: flex;
-   justify-content: center;
-   align-items: center;
+.boxNewPost {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  background-color: var(--color2);
+  padding: 5px;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: scale(0.9);
+}
+
+.boxNewPost.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.boxHeaderPost {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+.boxHeaderPost h2 {
+  color: var(--colorThema);
+  font-size: 1.4rem;
+}
+
+.boxHeaderPost button {
+  font-weight: bold;
+  display: inline-flex;
+  font-size: 2rem;
+  color: var(--colorThema);
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  left: 20px;
+  cursor: pointer;
+}
+
+.boxNewPost > textarea {
+  width: 100%;
+  height: 40px;
+  resize: none;
+  border: none;
+  border-radius: 7px;
+  text-indent: 15px;
+  font-size: 0.9rem;
+  outline: none;
+  margin-bottom: 20px;
+  padding: 5px;
+  background-color: transparent;
+  height: 100px;
+  font-weight: 600;
+  color: var(--colorThema);
+}
+
+.boxNewPost > textarea::placeholder {
+  color: var(--colorThema);
+  font-weight: initial;
+}
+
+@media (min-width: 700px) {
+  .boxNewPost {
+    width: 70%;
+    max-width: 600px;
+    height: 30%;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+
+  .boxNewPost.show {
+    transform: translate(-50%, -50%) scale(1);
+  }
 }

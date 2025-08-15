@@ -31,6 +31,7 @@ const Step2 = ({ handleChange, stepDataForm }) => {
         value={stepDataForm.biography || ""}
         name="biography"
         handleChange={handleChange}
+        rows={7}
         placeholder="Quer se apresentar? Pode começar por aqui ..."
       />
     </div>
