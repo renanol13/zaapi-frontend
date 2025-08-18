@@ -10,6 +10,7 @@ import api from "../../api/Api";
 const NewPostWindow = ({ setHandleWindowPost }) => {
   const [animatedDiv, setAnimatedDiv] = useState(false);
   const [dataPost, setDataPost] = useState("");
+  const [fetchLoading, setFetchLoading] = useState(false);
   const textAreaFocus = useRef();
 
   const {
@@ -24,14 +25,16 @@ const NewPostWindow = ({ setHandleWindowPost }) => {
   }, []);
 
   const sendPost = async () => {
-    console.log("oii");
-
     try {
-      const response = await api.post("/posts/create", { content: dataPost });
-      setHandleWindowPost(false);
-      console.log(dataPost);
+      if (dataPost) {
+        const response = await api.post("/posts/create", { content: dataPost });
+        setHandleWindowPost(false);
+      }
+      setFetchLoading(true);
     } catch (error) {
       console.log(error.message);
+    } finally {
+      setFetchLoading(false);
     }
   };
 
@@ -53,7 +56,11 @@ const NewPostWindow = ({ setHandleWindowPost }) => {
             value={dataPost}
             onChange={(e) => setDataPost(e.target.value)}
           ></textarea>
-          <ButtonForm text="Postar" handleClick={() => sendPost()} />
+          <ButtonForm
+            text="Postar"
+            handleClick={() => sendPost()}
+            loading={fetchLoading}
+          />
         </div>
       </Container>
     </>
