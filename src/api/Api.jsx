@@ -26,8 +26,8 @@ api.interceptors.response.use(
   (response) => response,
   (error) => {
     
-    const message = error.response?.data?.message || "Erro desconhecido";
-    return Promise.reject({ message: message, status: error.response?.status });
+    const message = error.response?.data?.message || "Erro desconhecido!";
+    return Promise.reject({ message: message, status: error.response?.status, error });
   }
 );
 
