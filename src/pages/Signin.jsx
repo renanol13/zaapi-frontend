@@ -16,17 +16,22 @@ const Signin = () => {
   const [data, setData] = useState({});
   const [messageError, setMessageError] = useState("");
   const [showPassword, setShowPassword] = useState(true);
+  const [fetchLoading, setFetchLoading] = useState(false);
 
   const navigate = useNavigate();
   const { setDataStorage } = UseAuth();
 
   const handleChange = (e) => {
-    if(messageError) setMessageError('')
+    if (messageError) setMessageError("");
     setData({ ...data, [e.target.name]: e.target.value });
   };
 
   const handleLogin = async () => {
-    const { isLogged, message } = await setDataStorage('/auth/login', data);
+    const { isLogged, message } = await setDataStorage(
+      "/auth/login",
+      data,
+      setFetchLoading
+    );
     isLogged ? navigate("/") : setMessageError(message);
   };
 
@@ -70,7 +75,7 @@ const Signin = () => {
               {showPassword ? <FaEyeSlash /> : <FaRegEye />}
             </button>
           </div>
-          <ButtonForm text="Entrar" />
+          <ButtonForm text="Entrar" loading={fetchLoading}/>
           <MessageError message={messageError} />
         </form>
         <p>

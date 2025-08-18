@@ -21,7 +21,8 @@ export const AuthProvider = ({ children }) => {
     setIsLoading(false);
   }, []);
 
-  const setDataStorage = async (endpoint, data) => {
+  const setDataStorage = async (endpoint, data, setFetchLoading) => {
+    setFetchLoading(true)
     try {
       const res = await api.post(endpoint, data);
       const { token, userData } = res.data;
@@ -37,6 +38,8 @@ export const AuthProvider = ({ children }) => {
     } catch (error) {
       
       return { isLogged: false, message: error.message };
+    } finally {
+      setFetchLoading(false)
     }
   };
 

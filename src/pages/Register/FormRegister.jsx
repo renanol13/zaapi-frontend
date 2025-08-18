@@ -14,6 +14,8 @@ const FormRegister = () => {
   const [dataForm, setDataForm] = useState({});
   const [stepDataForm, setStepDataForm] = useState({});
   const [messageError, setMessageError] = useState("");
+  const [fetchLoading, setFetchLoading] = useState(false);
+
   const {setDataStorage} = UseAuth()
   const navigate = useNavigate();
 
@@ -28,14 +30,14 @@ const FormRegister = () => {
     UseStepForm(stepsItems, { handleChange, stepDataForm, setMessageError });
 
   const handleSubmit = async (newDataForm) => {
-    const { isLogged, message } = setDataStorage('auth/register', newDataForm)
+    const { isLogged, message } = setDataStorage('auth/register', newDataForm, setFetchLoading)
     setMessageError(message)
     isLogged ? navigate("/") : setMessageError(message);
   };
 
   const fetchValidateStep = async (stepData) => {
     //Verifica no servidor se todos os campos estão corretos
-
+    setFetchLoading(true)
     try {
       await api.post(`/auth/validate-step/${currentStep}`, stepData);
       const newDataForm = { ...dataForm, ...stepData };
@@ -46,6 +48,8 @@ const FormRegister = () => {
       if (currentStep === 2) handleSubmit(newDataForm);
     } catch (error) {
       setMessageError(error.message);
+    } finally {
+      setFetchLoading(false)
     }
   };
 
@@ -101,6 +105,7 @@ const FormRegister = () => {
           <ButtonForm
             text={!isLastStep ? "Avançar" : "Enviar"}
             handleClick={() => verifyFormStep()}
+            loading={fetchLoading}
           />
         </div>
       </div>
