@@ -1,9 +1,10 @@
 import styles from "./Home.module.css";
 
 import UseAuth from "../hooks/UseAuth";
-import NewPostWindow from "../components/posts/NewPostWindow";
-import ClickWritePost from "../components/posts/ClickWritePost";
+import NewPostWindow from "../projects/posts/NewPostWindow";
+import ClickWritePost from "../projects/posts/ClickWritePost";
 import { useState } from "react";
+import ContentCard from "../projects/ContentCard";
 
 const Home = () => {
   const { logout } = UseAuth();
@@ -19,10 +20,8 @@ const Home = () => {
         />
       )}
       <ClickWritePost setHandleWindowPost={setHandleWindowPost} />
-      <button onClick={() => logout()}>click</button>
-      <p>
-        lkcejbvjbsdqjhbjbjbvjbvjbjbvjsdbjbvsjbvjsbjvsbvjbvjbdvjbjsbjbjvbjdbjdbvdjbvjvbjbvjvbjvfbjvdbdjbvdjvbdjvdbjdfvbjvfdbdjf
-      </p>
+      {/* <button onClick={() => logout()}>click</button> */}
+     <ContentCard/>
     </div>
   );
 };

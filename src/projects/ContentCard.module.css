@@ -1,0 +1,80 @@
+.boxContentCard {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 1.5rem;
+  border-bottom: 1px solid var(--color2);
+  margin-top: 10px;
+}
+
+.boxHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.boxInfoUser {
+  display: flex;
+  gap: 10px;
+}
+
+.boxInfoUser > svg {
+  background-color: rgba(215, 213, 213, 0.482);
+  padding: 5px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  color: rgb(139, 141, 141);
+}
+
+.boxNameHours{
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.boxNameHours > p:nth-child(1){
+    font-weight: bold;
+    font-size: .9rem;
+    color: black;
+
+}
+
+.boxNameHours > p:nth-child(2){
+    font-weight: bold;
+    font-size: .7rem;
+
+}
+
+.boxInfoUser div > p{
+    color: var(--color2);
+    font-size: .8rem;
+}
+
+
+.boxContent {
+  word-break: break-all;
+  width: 95%;
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+.boxActions{
+    display: flex;
+    gap: 10%;
+}
+
+.boxButtonsActions{
+    font-size: .9rem;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    cursor: pointer;
+    color: var(--color2);
+}
+
+.boxButtonsActions svg{
+    font-size: 1.1rem;
+}
+
+.boxButtonsActions span{
+
+}
