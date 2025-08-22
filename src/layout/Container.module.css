@@ -2,7 +2,6 @@
   padding-top: 55px;
   margin: 0px 10px;
   padding-bottom: 50px;
-  max-width: 800px;
   overflow-wrap: break-word;
 }
 
@@ -14,10 +13,16 @@
   left: 0;
   z-index: 99999;
   background-color: rgba(0, 0, 0, 0.5);
-  
 }
 
 @media (min-width: 700px) {
+  .boxConteiner {
+    margin: 0 auto;
+    max-width: 800px;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1000px){
   .boxConteiner {
     margin-left: 110px;
   }
