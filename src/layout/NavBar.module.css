@@ -1,71 +1,59 @@
-.boxNavBar ul{
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 50px;
-    position: fixed;
-    background-color: var(--colorThema);
-    bottom: 0px;
-}
-
-
-.boxNavBar li a svg{
-    font-size: 1.8rem;
-    color: var(--color2);
-    transition: .4s;
-    font-size: 1.8rem;
+.boxNavBar ul {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 50px;
+  position: fixed;
+  background-color: var(--colorThema);
+  bottom: 0px;
 
 }
 
-.boxNavBar li{
-    cursor: pointer;
-      -webkit-tap-highlight-color: transparent;
-
+.boxNavBar li a svg {
+  font-size: 1.8rem;
+  color: var(--color2);
+  transition: 0.4s;
+  font-size: 1.8rem;
 }
 
-.boxNavBar li span{
-    display: none;
+.boxNavBar li {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.boxNavBar li a.activeIcon svg{
-    color: var(--color1) !important;
+.boxNavBar li span {
+  display: none;
 }
 
+.boxNavBar li a.activeIcon svg {
+  color: var(--color1) !important;
+}
 
- .boxNavBar li a svg:active{
-        transform: scale(.8);
- }
-
-
-
-
-
+.boxNavBar li a svg:active {
+  transform: scale(0.8);
+}
 
 @media (min-width: 700px) {
-    .boxNavBar ul{
-        bottom: initial;
-        flex-direction: column;
-        height: 100dvh;
-        width: 90px;
-        position: absolute;
-        justify-content: center;
-        gap: 30px;
-    }
+  .boxNavBar ul {
+    bottom: initial;
+    flex-direction: column;
+    height: 100dvh;
+    width: 90px;
+    justify-content: center;
+    gap: 30px;
+  }
 
-    .boxNavBar li a svg{
-        padding: 10px;
-        border-radius: 10px;
-        box-sizing: content-box;
-        transition: .4s;
-        font-size: 2.1rem;
-    }
-    
-    .boxNavBar li a svg:hover{
-        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.488);
-        background-color: rgba(128, 128, 128, 0.379);
+  .boxNavBar li a svg {
+    padding: 10px;
+    border-radius: 10px;
+    box-sizing: content-box;
+    transition: 0.4s;
+    font-size: 2.1rem;
+  }
 
-    }
-  
-    
+  .boxNavBar li a svg:hover {
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.488);
+    background-color: rgba(128, 128, 128, 0.379);
+  }
 }
